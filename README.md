@@ -67,6 +67,8 @@ In this ROS 2 package:
 ### 3. Install dependecies (inside venv)
     pip install pygame pyyaml
 
+---
+
 ## Usage
 
 ### Create warehouse model
@@ -96,9 +98,12 @@ It will include:
 - **png** image of the warehouse,
 - **.txt** file with the matrix representation of the warehouse (with pickup locations).
 
+---
 
 ## Configuration (YAML)
 <p>Parameters for the warehouse creation node are set via YAML files under the config/ folder.
+
+---
 
 # Author
 

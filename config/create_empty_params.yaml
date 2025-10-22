@@ -1,0 +1,4 @@
+/**:
+  ros__parameters:
+    parent_dir: "src/warehouse_tools/system_tests/example_parent_dir"
+    warehouse_name: "example_warehouse"

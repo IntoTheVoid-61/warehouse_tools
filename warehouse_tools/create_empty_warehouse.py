@@ -7,6 +7,7 @@ class WarehouseCreatorNode(Node):
     def __init__(self):
         super().__init__("warehouse_creator_node")
 
+        #--Declare parameters for create_empty_warehouse--#
         self.declare_parameter('parent_dir', 'system_tests/example_parent_dir')
         self.declare_parameter('warehouse_name', 'example_warehouse')
 
@@ -14,8 +15,9 @@ class WarehouseCreatorNode(Node):
         self.run_creator()
 
     def run_creator(self):
-        parent_dir = self.get_parameter('parent_dir').get_parameter_value().string_value
-        warehouse_name = self.get_parameter('warehouse_name').get_parameter_value().string_value
+        #--Get parameters from yaml config file--#
+        parent_dir = self.get_parameter('parent_dir').value
+        warehouse_name = self.get_parameter('warehouse_name').value
 
         creator = CreateWarehouse(parent_directory=parent_dir,
                                   warehouse_name=warehouse_name,

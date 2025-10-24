@@ -1,5 +1,5 @@
 /**:  
   ros__parameters:
-    parent_dir: "src/warehouse_tools/system_tests/example_parent_dir"
-    warehouse_name: "example_warehouse"
-    pickup_scenario: "example_scenario"
+    parent_dir: "../warehouse_tests"
+    warehouse_name: "test_warehouse"
+    pickup_scenario: "test_scenario_1"

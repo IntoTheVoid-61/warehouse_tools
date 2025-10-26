@@ -1,0 +1,10 @@
+warehouse_creator_node: 
+  ros__parameters:
+    parent_dir: "system_tests/warehouse_tests"
+    warehouse_name: "test_warehouse_1"  
+
+pickup_scenario_node:
+  ros__parameters:
+    parent_dir: "system_tests/warehouse_tests"
+    warehouse_name: "test_warehouse_1" 
+    pickup_scenario: "test_scenario_1"

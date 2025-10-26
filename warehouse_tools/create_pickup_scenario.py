@@ -1,10 +1,16 @@
 import rclpy
 from rclpy.node import Node
 from warehouse_tools.create_warehouse import CreateWarehouse
+import os
+from warehouse_tools.utils import generate_map
 
 class PickUpScenarioNode(Node):
     def __init__(self):
         super().__init__("pickup_scenario_node")
+
+        #--Debuger to find where we launch from--#
+        #self.get_logger().info(f"Node initialized from directory: {os.getcwd()}")
+        #self.get_logger().info(f"__file__: {__file__}")
         
         #--Declare parameters for create_pickup_scenario--#
         self.declare_parameter('parent_dir', 'system_tests/example_parent_dir')
@@ -26,6 +32,8 @@ class PickUpScenarioNode(Node):
         self.get_logger().info("Launcing create pickup scenario...")
         creator.create_pickup_scenario(pickup_scenario=pickup_scenario)
         self.get_logger().info("Created pickup scenario")
+        path = generate_map(parent_dir=parent_dir,warehouse_name=warehouse_name,pickup_scenario=pickup_scenario)
+        self.get_logger().info(f"Added map files (yaml and pgm) at {path}")
 
 def main(args=None):
     rclpy.init(args=args)

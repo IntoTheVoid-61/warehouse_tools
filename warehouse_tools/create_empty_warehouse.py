@@ -1,7 +1,7 @@
 import rclpy
 from rclpy.node import Node
 from warehouse_tools.create_warehouse import CreateWarehouse
-
+from warehouse_tools.utils import generate_map
 
 class WarehouseCreatorNode(Node):
     def __init__(self):
@@ -27,6 +27,11 @@ class WarehouseCreatorNode(Node):
         self.get_logger().info("Launching create empty warehouse GUI...")
         creator.create_empty_warehouse()
         self.get_logger().info("Warehouse creation completed")
+        path = generate_map(parent_dir=parent_dir,warehouse_name=warehouse_name)
+        self.get_logger().info(f"Added map files (yaml and pgm) at {path}")
+        
+
+
 
 def main(args=None):
     rclpy.init(args=args)

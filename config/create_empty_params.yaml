@@ -1,4 +1,0 @@
-/**:
-  ros__parameters:
-    parent_dir: "../warehouse_tests"
-    warehouse_name: "test_warehouse" # Warehouse is a constant object, pickup scenarios change.

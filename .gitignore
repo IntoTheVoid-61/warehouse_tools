@@ -31,4 +31,5 @@ Thumbs.db
 *.dist-info/
 
 # Project specific
-/system_tests
+system_tests/
+test/
